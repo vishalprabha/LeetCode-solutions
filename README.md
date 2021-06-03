@@ -12,7 +12,7 @@ Python3 solutions to LeetCode problems with their time and space complexities
 
 ## Authors
  
-[@VishalPrabhachandar](www.linkedin.com/in/vishalprabha)
+[@VishalPrabhachandar](https://www.linkedin.com/in/vishalprabha/)
 
 ## Acknowledgments
 * [LeetCode](https://leetcode.com/)
