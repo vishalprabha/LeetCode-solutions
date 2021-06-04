@@ -31,7 +31,6 @@ class Solution:
                 dict[value] = index 
         return output
     
-    
         # two pass solution
         # dict = defaultdict(list)
         # output = []
