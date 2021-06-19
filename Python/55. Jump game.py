@@ -17,12 +17,12 @@ class Solution:
         :return boolean
         '''
         # forward approach
-        m = 0
+        jump = 0
         for index, element in enumerate(nums):
        
-            if index > element:
+            if index > jump:
                 return(False)
-            m = max(m, index+element)
+            jump = max(jump, index+element)
         return(True)
 
         # reverse approach
