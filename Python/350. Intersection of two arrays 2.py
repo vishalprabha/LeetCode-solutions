@@ -3,7 +3,7 @@ Source: https://leetcode.com/problems/intersection-of-two-arrays-ii/
 Author: Vishal Prabhachandar
 Date: 2021-July-12
 
-Time complexity: O(n^2)
+Time complexity: O(nlog(n))
 Space complexity: O(n)  
 '''
 
@@ -16,13 +16,36 @@ class Solution:
         :param  nums2: list of integers
         :return result: list of integers
         '''
+
+        # two pointer approach if arrays are sorted
+        nums1 = sorted(nums1)
+        nums2 = sorted(nums2)
         result = []
-        for element in nums1:
-            if element in nums2:
-                nums2.remove(element)
-                result.append(element)
-                
+        len_nums1 = len(nums1)
+        len_nums2 = len(nums2)
+        index_nums1 = 0
+        index_nums2 = 0
+        while index_nums1 < len_nums1 and index_nums2 < len_nums2:
+            if nums1[index_nums1] < nums2[index_nums2]:
+                index_nums1 += 1
+            elif nums1[index_nums1] > nums2[index_nums2]:
+                index_nums2 += 1
+            else:
+                result.append(nums1[index_nums1])
+                index_nums1 += 1
+                index_nums2 += 1
         return result
+            
+
+
+        # brute force approach
+        # result = []
+        # for element in nums1:
+        #     if element in nums2:
+        #         nums2.remove(element)
+        #         result.append(element)
+                
+        # return result
 
         # inbuilt counter approach
         # c1, c2 = Counter(nums1), Counter(nums2)
