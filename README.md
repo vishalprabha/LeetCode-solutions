@@ -8,10 +8,10 @@
 
 ## Description
 
-Python3 solutions to LeetCode problems with their time and space complexities
+Python3 solutions to LeetCode problems with their time and space complexities.
 
 ## Authors
- 
+
 [@VishalPrabhachandar](https://www.linkedin.com/in/vishalprabha/)
 
 ## Acknowledgments
