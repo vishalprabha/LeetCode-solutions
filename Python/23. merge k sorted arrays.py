@@ -20,7 +20,8 @@ class Solution(object):
 
         :param  lists: list of list of ListNode objects
         :return start: ListNode object
-        '''ents = []
+        '''
+        elements = []
         start = head = ListNode()
         for values in lists:
             while values:
