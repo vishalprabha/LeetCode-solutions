@@ -21,6 +21,8 @@ class Solution(object):
         :param  lists: list of list of ListNode objects
         :return start: ListNode object
         '''
+
+        # brute force approach
         elements = []
         start = head = ListNode()
         for values in lists:
@@ -31,3 +33,20 @@ class Solution(object):
             head.next = ListNode(element)
             head = head.next
         return start.next
+
+        '''
+        # priority queue approach
+        head = pointer = ListNode()
+        q = PriorityQueue()
+        for element in lists:
+            if element:
+                q.put((element.val, element))
+        while not q.empty():
+            val, node = q.get()
+            pointer.next = ListNode(val)
+            pointer = pointer.next
+            node = node.next
+            if node:
+                q.put((node.val, node))
+        return head.next
+        '''
