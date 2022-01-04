@@ -47,17 +47,17 @@ class Solution:
     # BFS solution 
     # Time complexity: O(N) where is N is the number of nodes in a tree
     # Space complexity: O(N) if the tree is imbalanced  
-    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        queue = [(p, q)]
-        while queue:
-            node1, node2 = queue.pop(0)
-            if not node1 and not node2:
-                continue
-            elif not node1 or not node2:
-                return False
-            else:
-                if node1.val != node2.val:
-                    return False
-                queue.append((node1.left, node2.left))
-                queue.append((node1.right, node2.right))
-        return True
+    # def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    #     queue = [(p, q)]
+    #     while queue:
+    #         node1, node2 = queue.pop(0)
+    #         if not node1 and not node2:
+    #             continue
+    #         elif not node1 or not node2:
+    #             return False
+    #         else:
+    #             if node1.val != node2.val:
+    #                 return False
+    #             queue.append((node1.left, node2.left))
+    #             queue.append((node1.right, node2.right))
+    #     return True
