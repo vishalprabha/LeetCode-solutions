@@ -15,6 +15,12 @@ Space complexity: O(1)
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      '''
+        reverse linked list
+
+        :param  head: head of linkedlist
+        :return current: head of reversed linkedlist
+    '''
       # iterative approach
         current = None 
         while head:
