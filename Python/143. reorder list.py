@@ -22,25 +22,37 @@ class Solution:
         :return None
         '''
         # find the middle of the list
-        slow = fast = head  
-        while  fast.next and fast.next.next:
+        middle = self.findMiddle(head)
+        # reverse the second half of the list
+        reversedList = self.reverseList(middle)
+        # merge the two lists
+        reorderList = self.mergeList(head, reversedList)
+        
+        
+    def findMiddle(self, head):
+        slow = fast = head
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        
-        # reverse the second half of the list
-        previous, current = None, slow.next
-        while current:
-            temp = current.next
-            current.next = previous
-            previous = current
-            current = temp
-        slow.next = None
-        
-        # reorder the list
+        return slow
+
+    def reverseList(self, middle):
+        start = None
+        while middle:
+            temp = middle.next
+            middle.next = start
+            start = middle
+            middle = temp
+        return start
+    
+    def mergeList(self, head, reversedList):
         start = head
-        while previous:
+        while reversedList and reversedList.next:
             temp = start.next
-            start.next = previous
-            start = previous
-            previous = temp
+            start.next = reversedList
+            start = temp
+            
+            temp = reversedList.next
+            reversedList.next = start
+            reversedList = temp
             
